@@ -34,11 +34,11 @@ label.error {
 /* A ESTO NO LE DEBES HACER MUCHO CASO YA
 QUE AÑADE TEXTO CON CSS Y ES UN POCO... NO SÉ */
 #passwd-error.error::before{
-  content: '\A Atention! \A';
+  content: '\A Atention! ';
 }
 
 /* PUES LO MISMO DE ARRIBA PERO CON EL MENSAJE 
 DE ERROR DEL EMAIL */
 #email-error.error::before{
-  content: '\A Atention! \A';
+  content: '\A Atention! ';
 }

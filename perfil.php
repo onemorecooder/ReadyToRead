@@ -23,11 +23,11 @@
         <div id="logout"><form method="POST" action="credentials.php"><input name="salida" class="button" type="submit" value="LOGOUT"></form></div>
         <div id="barraMenu">
             <ul id="ejm4">
-                <li><a href="inicio.php" title="Inicio">Home</a></li>
-                <li><a href="perfil.php" title="Perfil">Profile</a></li>
-                <li><a href="libros.php" title="Biblioteca">Library</a></li>
-                <li><a href="#" title="Foro">Forum</a></li>
-                <li><a href="soporte1.html" title="Soporte">Support</a></li>
+                <li><a href="inicio.php" title="Home">Home</a></li>
+                <li><a href="perfil.php" title="Profile">Profile</a></li>
+                <li><a href="libros.php" title="Library">Library</a></li>
+                <li><a href="#" title="Forum">Forum</a></li>
+                <li><a href="soporte1.html" title="Support">Support</a></li>
             </ul>
         </div>
     </header>
