@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Merriweather:wght@300&family=Montserrat:wght@100&family=Staatliches&display=swap');
+
+body{
+    background-color:#ffffff;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.button {
+    background-color: #1f7671;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+}
+
+/* BOTÓN LOGIN Y LOGOUT::::: HOVER */
+.button:hover {
+    opacity: 0.8;
+}
+
+/* BOTÓN LOGIN Y LOGOUT::::: ACTIVE */
+.button:active {
+    opacity: 0.4;
+}
+
+div {
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 400px;
+    background-color: #f4f1ea;
+    min-height: 600px;
+}
+
+#logo {
+    width: 65%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.link {
+    font-size: 10px;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/* TEXTO DEL FOOTER */
+.textFooter {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* EL HOVER DEL TAG ANTES MENCIONADO */
+.textFooter:hover {
+    color: black;
+}
+
+
+/****************************************************************/
+
+/* AJUSTAMOS AL CENTRO TODO EL CONTENIDO DEL FOOTER */
+footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f4f1ea;
+}
+/* ALINEAMOS TODO EL CONTENIDO DEL FOOTER EN LA MISMA LÍNEA */
+footer ul{
+    list-style: none;
+    display: inline-flex;
+}
+/* LA DAMOS UN MARGIN A LOS LI DEL FOOTER */
+footer ul li{
+    margin-right: 15px;
+}
+
+/*------------------------------------------------TABLET--------------------------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    div {
+    
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px; /*quito el margin top*/
+        width: 400px;
+        background-color: #f4f1ea;
+        min-height: 600px;
+    }
+    
+}
+
+/*------------------------------------------------MOVIL GRANDE--------------------------------------------------------*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    div {
+    
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px; /*quito el margin top*/
+        width: 400px;
+        background-color: #f4f1ea;
+        min-height: 600px;
+    }
+
+
+    
+}
+
+/*------------------------------------------------MOVIL PEQUEÑO--------------------------------------------------------*/
+
+@media (max-width: 480px) {
+
+    div {
+    
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0px; /*quito el margin top*/
+
+        background-color: #f4f1ea;
+        min-height: 600px;
+    }
+
+
+/*cambio la disposición a vertical en la que se lista el footer para que no se solape el texto*/  
+    footer ul{
+        list-style: none;
+        display: block;
+        margin-right: 50px; /*Centro el texto con este margin*/
+    }
+/*Modifico la distancia entre las lineas del texto del footer*/
+    footer ul li{
+        margin-top: 10px;
+        
+    }
+    
+}
+    

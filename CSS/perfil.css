@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Merriweather:wght@300&family=Montserrat:wght@100&family=Staatliches&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#logout{
+    text-align: center;
+}
+
+.button {
+    background-color: #1f7671;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+}
+
+/* BOTÓN LOGIN Y LOGOUT::::: HOVER */
+.button:hover {
+    opacity: 0.8;
+}
+
+/* BOTÓN LOGIN Y LOGOUT::::: ACTIVE */
+.button:active {
+    opacity: 0.4;
+}
+
+/* CON ESTO SE ALINEA EL DIV QUE ESTÁ DENTRO DEL HEADER */
+header #barraMenu {
+    text-align: center;
+}
+
+#cabezal {
+    background-color: #f4f1ea;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding-left: 35px;
+
+}
+
+#cabezal p {
+    text-align: left;
+    display: inline-block;
+    margin: 4px;
+}
+
+/* DAMOS TAMAÑO AL LOGO Y SE ALINEA AL CENTRO */
+#logo {
+    width: 150px;
+    height: 31px;
+    margin: auto;
+    vertical-align: bottom;
+}
+
+ul#ejm4 li a {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#ejm4 li a::before {
+    color: black;
+    content: attr(title);
+    position: absolute;
+    transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+
+ul#ejm4 li a:hover::before {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+#barraMenu ul {
+    background-color: #f4f1ea;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    list-style: none;
+}
+
+/* ALINEAMOS EL CONTENIDO DEL DIV CON EL ID="USER" */
+#user {
+    text-align: center;
+}
+
+/* TAMAÑO DE LA IMÁGEN DE USUARIO */
+.user_pic {
+    width: 110px;
+    height: 110px;
+    margin-top: 20px;
+}
+
+/* NOMBRE DE USUARIO */
+#userName {
+    font-size: 25px;
+    color: #1f7671;
+}
+
+/* ESTE PAGENAME SOLO SE UTILIZA EN LA VENTANA PERFIL YA QUE DISPONE DE FLECHAS A 
+LOS LATERALES PARA PODER REDIRIGIRTE HACIA LA PÁGINA EN CUESTIÓN, SE AÑADE EL GRID
+Y EL COLOR DE FONDO*/
+#pageNameConButton {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background-color: #f4f1ea;
+}
+
+/* AQUÍ EL COLOR DE LA LETRA Y UN PADDING PARA AJUSTARLO */
+#pageNameConButton h1 {
+    color: #1f7671;
+    padding-left: 35px;
+}
+
+/* GO TO ES UNA CLASE QUE HACE REFERENCIA AL BOTÓN LATERAL PARA IR A LAS 
+DISTINTAS SECCIONES ES UN TAG <A> */
+.goTo {
+    margin: auto;
+    margin-right: 35px;
+}
+
+/* LE DAMOS UN TAMAÑO A LA IMAGEN */
+.goTo img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* CENTRAMOS EL DIV QUE CONTENDRÁ TODOS LOS ELEMENTOS DE LA CARTA DE LOS TROFEOS, 
+UN MARGIN GENERAL Y EN EL BOTTOM PARA SEPARARLOS UN POCO, 
+TAMBIÉN UN TAMAÑO A LA CAJA */
+.cartaTrofeo {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+/* AL GENERAL QUE AFECTA A TODO SU INTERIOR LE AÑADIMOS
+UNA POSICIÓN RELATIVA Y UN TAMAÑO, ALINEAMOS EL TEXTO Y 
+AGREGAMOS LA TRANSICIÓN Y SU TIPO */
+.cartaTrofeo-General {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* LA TRANSICIÓN HAREMOS PARA QUE LA CARTA SE VOLTEE Y VER LA PARTE
+TRASERA UN ROTATE-X DE 180 */
+.cartaTrofeo:hover .cartaTrofeo-General {
+    transform: rotateX(180deg);
+
+}
+
+/* HACEMOS LO MISMO QUE CON LA CARA DELANTERA Y OCULTAMOS LA CARA OPUESTA */
+.cartaTrofeo-Frontal, .cartaTrofeo-Trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+
+}
+
+/* LE DAMOS UN COLOR AL BACKGROUND Y A LA FUENTE DE LA CARA FRONTAL */
+.cartaTrofeo-Frontal {
+    background-color: #f4f1ea;
+    color: black;
+}
+
+/* COLOR A LA FUENTE, AL BACKGROUND, UNA SOMBRA A LA CAJA Y OTRA
+TRANSICIÓN PARA CUANDO NO SE HAGA EL HOVER */
+.cartaTrofeo-Trasera {
+    background-color: #1f7671;
+    color: white;
+    transform: rotateX(180deg);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* LE AÑADIMOS UN PADDING AL TEXTO PARA QUE NO QUEDE PEGADO A LOS BORDES
+DE LA CARTA DEL TROFEO */
+.textoTrofeo {
+    padding: 20px;
+}
+
+/* ESTE ES EL CONTENIDO GENERAL DE LOS TROFEOS, EN EL QUE SE HACE EL DISPLAY GRID 
+PARA QUE SE VEAN DE 3 EN 3 */
+#generalContentTrofeos {
+    background-color: #f4f1ea;
+    text-align: center;
+    margin: 40px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+/* HACE REFERENCIA A LAS IMÁGENES DEL CONTENIDO DE LOS TROFEOS, LAS COPAS VAMOS... XD */
+#generalContentTrofeos img {
+    width: 125px;
+    height: 125px;
+}
+
+/* YA QUE LA SECCIÓN DE AMIGOS Y LIBROS ES IDÉNTICA Y SE UTILIZA EL MISMO CÓDIGO
+ESTE ID SE UTILIZA PARA AMBAS EXCEPTO PARA LA DE LOS TROFEOS QUE TIENE SI GENERALCONTENT
+ÚNICO, COLOR, UN MARGIN GENERAL PARA SEPARARLO DE LOS BORDES Y UN PADDING  */
+#generalContent {
+    background-color: #f4f1ea;
+    margin: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* AQUI AFECTA A LOS DIV QUE ESTÁN DENTRO DEL CONTENIDO GENERAL PARA DARLES EL 
+DISPLAY GRID Y SUS PERCENTAJES */
+#generalContent div {
+    display: grid;
+    grid-template-columns: 10% 30% 30% 20% 10%;
+}
+
+/* EL HOVER A LOS DIV'S DEL CONTENIDO GENERAL PARA DESTACARLOS CUANDO SE HAGA HOVER */
+#generalContent div:hover {
+    background-color: #1f7671;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    background-color: rgba(219, 202, 180, 0.411);
+}
+
+/* AL H2 DE LOS DIV'S */
+#generalContent div h2 {
+    text-align: center;
+}
+
+/* AL TEXTO DE LOS DIV'S */
+#generalContent div p {
+    margin: auto;
+}
+
+/* ESTE ID ES UTILIZADO PARA DARLE UN TAMAÑO Y UN MARGIN A LA FOT DE LAS ESTRELLAS
+DE LOS LIBROS */
+#star {
+    margin: auto;
+    width: 180px;
+    height: 35px;
+}
+
+/* LA CLASE BOOK HACE REFERENCIA A LAS MINIATURAS TANTO DE LOS LIBROS COMO DE LOS
+AMIGOS QUE SE VE A LA IZQUIERDA EN PEQUEÑITO */
+.book {
+    padding-left: 35px;
+    margin: auto;
+    width: 55px;
+    height: 55px;
+}
+
+/* ESTE ES EL LINK QUE SE UTILIZA PARA VISUALIZAR LA BIBLIOTECA DE
+CADA USUARIO, POSICION RELATIVA COLOR SIN DECORACIÓN, EN NEGRITA... */
+.verBiblio {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* EL HOVER DEL TAG ANTES MENCIONADO */
+.verBiblio:hover {
+    color: black;
+}
+
+/* AJUSTAMOS AL CENTRO TODO EL CONTENIDO DEL FOOTER */
+footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f4f1ea;
+}
+
+/* TEXTO DEL FOOTER */
+.textFooter {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* EL HOVER DEL TAG ANTES MENCIONADO */
+.textFooter:hover {
+    color: black;
+}
+
+/* ALINEAMOS TODO EL CONTENIDO DEL FOOTER EN LA MISMA LÍNEA */
+footer ul{
+    list-style: none;
+    display: inline-flex;
+}
+/* LA DAMOS UN MARGIN A LOS LI DEL FOOTER */
+footer ul li{
+    margin-right: 15px;
+}

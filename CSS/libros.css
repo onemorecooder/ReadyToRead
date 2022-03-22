@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Merriweather:wght@300&family=Montserrat:wght@100&family=Staatliches&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* CON ESTO SE ALINEA EL DIV QUE ESTÁ DENTRO DEL HEADER */
+header #barraMenu {
+    text-align: center;
+}
+
+#cabezal {
+    background-color: #f4f1ea;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding-left: 35px;
+
+}
+
+#cabezal p {
+    text-align: left;
+    display: inline-block;
+    margin: 4px;
+}
+
+/* DAMOS TAMAÑO AL LOGO Y SE ALINEA AL CENTRO */
+#logo {
+    width: 150px;
+    height: 31px;
+    margin: auto;
+    vertical-align: bottom;
+}
+
+ul#ejm4 li a {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#ejm4 li a::before {
+    color: black;
+    content: attr(title);
+    position: absolute;
+    transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+
+ul#ejm4 li a:hover::before {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+#barraMenuMovil {
+
+    display: none;
+
+}
+
+#barraMenu ul {
+    background-color: #f4f1ea;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    list-style: none;
+}
+
+/* ALINEAMOS EL CONTENIDO DEL DIV CON EL ID="USER" */
+#user {
+    text-align: center;
+}
+
+/* TAMAÑO DE LA IMÁGEN DE USUARIO */
+#user img {
+    width: 110px;
+    height: 110px;
+    margin-top: 20px;
+}
+
+/* NOMBRE DE USUARIO */
+#userName {
+    font-size: 25px;
+    color: #1f7671;
+}
+
+/* NOMBRE DE LA PÁGINA, EN ESTE CASO BIBLIOTECA */
+#pageName {
+    background-color: #f4f1ea;
+    color: #1f7671;
+    padding: 15px;
+    padding-left: 35px;
+}
+
+/****************************************************************/
+
+.book {
+    padding-left: 35px;
+    margin: auto;
+    width: 55px;
+    height: 55px;
+}
+
+.menu {
+    margin: auto;
+    width: 55px;
+    height: 55px;
+}
+
+#generalContent {
+    background-color: #f4f1ea;
+    margin: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#generalContent div {
+    display: grid;
+    grid-template-columns: 10% 30% 30% 20% 10%;
+}
+
+#generalContent div:nth-child(even) {
+    background-color: rgb(219, 202, 180);
+}
+
+#generalContent div h2 {
+    text-align: center;
+}
+
+#generalContent div p {
+    margin: auto;
+}
+
+#generalContent div:hover {
+    background-color: #1f7671;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    background-color: rgba(219, 202, 180, 0.411);
+}
+
+#star {
+    margin: auto;
+    width: 180px;
+    height: 35px;
+}
+
+/****************************************************************/
+
+/* AJUSTAMOS AL CENTRO TODO EL CONTENIDO DEL FOOTER */
+footer {
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f4f1ea;
+}
+
+/* ALINEAMOS TODO EL CONTENIDO DEL FOOTER EN LA MISMA LÍNEA */
+footer ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+/* LA DAMOS UN MARGIN A LOS LI DEL FOOTER */
+footer ul li {
+    margin-right: 15px;
+}
+
+/* TEXTO DEL FOOTER */
+.textFooter {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* EL HOVER DEL TAG ANTES MENCIONADO */
+.textFooter:hover {
+    color: black;
+}
+
+
+/*------------------------------------------------TABLET--------------------------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /*Dejo de mostrar las estrellas "star" en el div de los libros*/
+    #generalContent div {
+        display: grid;
+        grid-template-columns: 10% 50% 30% 0% 10%;
+    }
+
+
+    #star {
+        display: none;
+    }
+
+
+
+}
+
+/*------------------------------------------------MOVIL GRANDE--------------------------------------------------------*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    /*Muestro la barra del menú del móvil*/
+
+    #barraMenuMovil {
+        margin-top: 2px;
+        background-color: #f4f1ea;
+        display: grid;
+        grid-template-columns: 10% 70% 10% 10%;
+        list-style: none;
+        height: 55px;
+
+    }
+
+
+    #atras {
+        margin: auto;
+        width: 45px;
+        height: 45px;
+    }
+
+    #barraBusqueda {
+        margin: auto;
+        width: 100%;
+        height: 25px;
+    }
+
+    #lupa {
+        margin: auto;
+        padding-left: 20px;
+        width: 35px;
+        height: 35px;
+    }
+
+    /*Quito la barra del menú del ordenaodor*/
+    #barraMenu {
+
+        display: none;
+    }
+
+    #generalContent {
+        background-color: #f4f1ea;
+        margin: 0px;
+        /*quito el margin*/
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #generalContent div {
+        display: grid;
+        grid-template-columns: 20% 65% 0% 0% 15%;
+    }
+
+    #generalContent>div>p {
+        display: none;
+    }
+
+    .book {
+        padding-left: 10px;
+        /*cambio el pading*/
+        margin: auto;
+        width: 55px;
+        height: 55px;
+    }
+
+    .menu {
+
+        margin: auto;
+        width: 55px;
+        height: 55px;
+    }
+
+
+    #star {
+        display: none;
+    }
+
+}
+
+/*------------------------------------------------MOVIL PEQUEÑO--------------------------------------------------------*/
+
+@media (max-width: 480px) {
+
+    /*------REESCALO LA BARRA DE BUSQUEDA-------*/
+
+    #barraMenuMovil {
+        margin-top: 2px;
+        background-color: #f4f1ea;
+        display: grid;
+        grid-template-columns: 10% 65% 10% 15%;
+        list-style: none;
+        height: 55px;
+
+    }
+
+
+    #atras {
+        margin: auto;
+        width: 35px;
+        height: 35px;
+    }
+
+    #barraBusqueda {
+        margin: auto;
+        width: 100%;
+        height: 25px;
+    }
+
+    #lupa {
+        margin: auto;
+        padding-left: 15px;
+        width: 25px;
+        height: 25px;
+    }
+
+    #barraMenu {
+
+        display: none;
+    }
+
+    #generalContent {
+        background-color: #f4f1ea;
+        margin: 0px;
+        /*quito el margin*/
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #generalContent div {
+        display: grid;
+        grid-template-columns: 20% 65% 0% 0% 15%;
+    }
+
+    #generalContent>div>p {
+        display: none;
+    }
+
+    .book {
+        padding-left: 10px;
+        /*cambio el pading*/
+        margin: auto;
+        width: 55px;
+        height: 55px;
+    }
+
+    .menu {
+
+        margin: auto;
+        width: 55px;
+        height: 55px;
+    }
+
+
+    #star {
+        display: none;
+    }
+
+
+
+    /*cambio la disposición a vertical en la que se lista el footer para que no se solape el texto*/
+    footer ul {
+        list-style: none;
+        display: block;
+        margin-right: 50px;
+        /*Centro el texto con este margin*/
+    }
+
+    /*Modifico la distancia entre las lineas del texto del footer*/
+    footer ul li {
+        margin-top: 10px;
+
+    }
+
+}

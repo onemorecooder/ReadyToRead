@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Merriweather:wght@300&family=Montserrat:wght@100&family=Staatliches&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.button {
+    background-color: #1f7671;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+}
+
+/* BOTÓN LOGIN Y LOGOUT::::: HOVER */
+.button:hover {
+    opacity: 0.8;
+}
+
+/* BOTÓN LOGIN Y LOGOUT::::: ACTIVE */
+.button:active {
+    opacity: 0.4;
+}
+
+/* CON ESTO SE ALINEA EL DIV QUE ESTÁ DENTRO DEL HEADER */
+header #barraMenu {
+    text-align: center;
+}
+
+#cabezal {
+    background-color: #f4f1ea;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding-left: 35px;
+
+}
+
+#cabezal p {
+    text-align: left;
+    display: inline-block;
+    margin: 4px;
+}
+
+/* DAMOS TAMAÑO AL LOGO Y SE ALINEA AL CENTRO */
+#logo {
+    width: 150px;
+    height: 31px;
+    margin: auto;
+    vertical-align: bottom;
+}
+
+/* LOGO DE LA PÁGINA DE INICIO QUE ESTÁ AL LADO DEL MENSAJE DE 
+BIENVENIDA */
+.inicio_pic {
+    width: 110px;
+    height: 110px;
+}
+
+ul#ejm4 li a {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#ejm4 li a::before {
+    color: black;
+    content: attr(title);
+    position: absolute;
+    transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+
+ul#ejm4 li a:hover::before {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+#barraMenuMovil {
+
+    display: none;
+
+}
+
+#barraMenu ul {
+    background-color: #f4f1ea;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    list-style: none;
+}
+
+/* ALINEAMOS EL CONTENIDO DEL DIV CON EL ID="USER" */
+#user {
+    text-align: center;
+}
+
+/* GRID PARA EL MENSAJE DE BIENVENIDA Y EL LOGO */
+.userInicio {
+    padding-top: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+#logout{
+    text-align: center;
+}
+
+/* NOMBRE DE USUARIO PANTALLA INICIO */
+#userNameInicio {
+    margin: 15px;
+    padding: 5px;
+    font-size: 50px;
+    color: #1f7671;
+}
+
+/* TAMAÑO DE LA IMÁGEN DE USUARIO */
+#user img {
+    width: 110px;
+    height: 110px;
+    margin-top: 20px;
+}
+
+/* NOMBRE DE USUARIO */
+#userName {
+    font-size: 25px;
+    color: #1f7671;
+}
+
+/* NOMBRE DE LA PÁGINA, EN ESTE CASO BIBLIOTECA */
+#pageName {
+    background-color: #f4f1ea;
+    color: #1f7671;
+    padding: 15px;
+    padding-left: 35px;
+}
+
+/********************************    CONTENIDO PÁGINA    ********************************/
+.textBooks {
+    padding-left: 15px;
+    margin-right: 15%;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.librosDestacados {
+    margin: 10px;
+    padding-left: 5px;
+    padding-top: 45px;
+    font-size: 50px;
+    color: #1f7671;
+}
+
+#divRecomended {
+    margin: auto;
+    padding-top: 10%;
+    padding-left: 25%;
+}
+
+#recomended {
+    width: 130px;
+    height: 150px;
+}
+
+.sabiasQue {
+    padding: 20px;
+    padding-left: 25px;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+
+/* HACE REFERENCIA AL CARROUSEL QUE GUARDA LOS LIBROS GENERAL */
+.carrouselEscritores {
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin-top: 55px;
+}
+
+/* HACE REFERENCIA A LAS IMAGENES DEL CARROUSEL DE LOS LIBROS */
+.carrouselEscritores>img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display 10s infinite;
+}
+
+/* ESTO SON LAS ANIMACIONES DE LOS ESCRITORES */
+@keyframes display {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+}
+
+/* ESTO LE DA DELAY A LAS FOTOS SELECCIONADAS CON NTH-CHILD */
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+
+img:nth-child(5) {
+    animation-delay: 8s;
+}
+
+
+/****************************************************************/
+
+/* AJUSTAMOS AL CENTRO TODO EL CONTENIDO DEL FOOTER */
+footer {
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f4f1ea;
+}
+
+/* ALINEAMOS TODO EL CONTENIDO DEL FOOTER EN LA MISMA LÍNEA */
+footer ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+/* LA DAMOS UN MARGIN A LOS LI DEL FOOTER */
+footer ul li {
+    margin-right: 15px;
+}
+
+/* TEXTO DEL FOOTER */
+.textFooter {
+    position: relative;
+    color: #1f7671;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* EL HOVER DEL TAG ANTES MENCIONADO */
+.textFooter:hover {
+    color: black;
+}

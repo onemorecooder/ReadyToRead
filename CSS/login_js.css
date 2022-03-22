@@ -1,0 +1,44 @@
+/* ESTO NO HACE FALTA QUE TE LO EXPLIQUE */
+form label {
+  display: inline-block;
+  width: 100px;
+}
+
+/* ESTO TAMPOCO */
+form div {
+  margin-bottom: 10px;
+}
+
+/* EDITAS LA CLASE DEL MENSAJE DE ERROR
+EN ESTE CASO UN COLOR ROJO PARA QUE SEPAS
+QUE TE HAS EQUIVOCADO */
+.error {
+  color: red;
+  margin-left: 5px;
+}
+
+/* ANTES DEL MENSAJE DE ERROR HAGO ESTO
+PARA AÑADIR UN SALTO DE LÍNEA Y NO SALGA 
+PEGADO AL INPUT */
+.error::before{
+  content: '\A';
+  white-space: pre;
+}
+
+/* ESTO ES PARA HACER EL DISPLAY DEL
+MENSAJE QUE APARECE DEL TAG LABEL */
+label.error {
+  display: inline;
+}
+
+/* A ESTO NO LE DEBES HACER MUCHO CASO YA
+QUE AÑADE TEXTO CON CSS Y ES UN POCO... NO SÉ */
+#passwd-error.error::before{
+  content: '\A Atention! \A';
+}
+
+/* PUES LO MISMO DE ARRIBA PERO CON EL MENSAJE 
+DE ERROR DEL EMAIL */
+#email-error.error::before{
+  content: '\A Atention! \A';
+}
