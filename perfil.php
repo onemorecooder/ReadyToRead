@@ -26,8 +26,8 @@
                 <li><a href="inicio.php" title="Home">Home</a></li>
                 <li><a href="perfil.php" title="Profile">Profile</a></li>
                 <li><a href="libros.php" title="Library">Library</a></li>
-                <li><a href="#" title="Forum">Forum</a></li>
-                <li><a href="soporte1.html" title="Support">Support</a></li>
+                <li><a href="aboutUs.html" title="About Us">About Us</a></li>
+                <li><a href="soporte1.php" title="Support">Support</a></li>
             </ul>
         </div>
     </header>
@@ -151,9 +151,9 @@
     <footer>
         <ul>
             <li><b>Ready to Read &copy; 2022</b></li>
-            <li><a class="textFooter" href="#">About Us</a></li>
+            <li><a class="textFooter" href="aboutUs.html">About Us</a></li>
             <li><a class="textFooter" href="#">Contact</a></li>
-            <li><a class="textFooter" href="soporte1.html">Support</a></li>
+            <li><a class="textFooter" href="soporte1.php">Support</a></li>
         </ul>
     </footer>
 

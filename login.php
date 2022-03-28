@@ -45,7 +45,7 @@
     <footer>
         <ul>
             <li><b>Ready to Read &copy; 2022</b></li>
-            <li><a class="textFooter" href="#" title="Pantalla sobre ReadyToRead">About Us</a></li>
+            <li><a class="textFooter" href="aboutUs.html" title="Pantalla sobre ReadyToRead">About Us</a></li>
             <li><a class="textFooter" href="#" title="Pantalla de contacto de ReadyToRead">Contact</a></li>
             <li><a class="textFooter" href="soporte1.html" title="Pantalla de soporte">Support</a></li>
         </ul>
