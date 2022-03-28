@@ -18,7 +18,7 @@
 
     <form id="second_form" method="post" action="credentials.php">
         <div>
-            <img id="logo" src="LOGO2/logo_large.png" alt="Logo de ReadyToRead">
+            <img id="logo" src="/Imagenes/Logo/logo.png" alt="Logo de ReadyToRead">
             <hr>
             <h2>LOGIN</h2>
             <hr><br>

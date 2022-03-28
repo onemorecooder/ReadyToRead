@@ -12,7 +12,7 @@
 <body>
     <form method="POST" action="credentials.php">
         <div>
-            <img id="logo" src="LOGO2/logo_large.png" alt="">
+            <img id="logo" src="Imagenes/Logo/logo.png" alt="">
             <hr>
             <h2>SIGN UP</h2>
             <hr>
