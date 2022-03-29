@@ -119,8 +119,46 @@ ul#ejm4 li a:hover::before {
 #head{
     margin: 10px;
     text-align: center;
+    background-image: url(/Imagenes/cabecera.jpg);
+    padding: 100px;
+    z-index: 0;
+}
+
+#head_2{
+    margin: 10px;
+    text-align: center;
     background-color: #1f767250;
-    padding: 150px;
+    padding: 100px;
+    z-index: 0;
+}
+
+#head_2 h1{
+    color: #1f7671;
+}
+
+#head_3 h1{
+    color: #1f7671;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#head_2 p{
+    font-size: x-large;
+}
+
+#head h1{
+    z-index: 1;
+    opacity: 100%;
+    color: black;
+    background-color: #f4f1ea94;
+    padding: 50px;
+}
+
+#head img{
+    width: 150px;
+    height: 150px;
 }
 
 /* TAMAÑO DE LA IMÁGEN DE USUARIO */
@@ -128,6 +166,7 @@ ul#ejm4 li a:hover::before {
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    
 }
 
 .pic_left{
@@ -145,7 +184,7 @@ ul#ejm4 li a:hover::before {
 .pic_right{
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    background-color: #1f767250;
+    background-color: #1f767227;
     margin: 10px;
     padding: 2%;
     text-align: justify;
@@ -159,11 +198,6 @@ ul#ejm4 li a:hover::before {
 }
 
 .pic_left div{
-    text-align: center;
-}
-
-.pic_left div img{
-    border-radius: 50%;
     text-align: center;
 }
 
@@ -182,7 +216,21 @@ ul#ejm4 li a:hover::before {
     font-size: 20px;
 }
 
+.pic_left div h2{
+    color: #1f7671;
+}
+
+.pic_right div h2{
+    color: #1f7671;
+}
+
+.social_media:hover{
+    opacity: 0.5;
+}
+
 /****************************************************************/
+
+
 
 /* AJUSTAMOS AL CENTRO TODO EL CONTENIDO DEL FOOTER */
 footer {

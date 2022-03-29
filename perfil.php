@@ -152,7 +152,7 @@
         <ul>
             <li><b>Ready to Read &copy; 2022</b></li>
             <li><a class="textFooter" href="aboutUs.html">About Us</a></li>
-            <li><a class="textFooter" href="#">Contact</a></li>
+            <li><a class="textFooter" href="contact.php">Contact</a></li>
             <li><a class="textFooter" href="soporte1.php">Support</a></li>
         </ul>
     </footer>
