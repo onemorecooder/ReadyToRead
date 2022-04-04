@@ -19,15 +19,16 @@
   input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid;
     margin-top: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     resize: vertical;
   }
   
   input[type=submit] {
     background-color: #1f7671;
     color: white;
+    margin-top: 10px;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
@@ -62,3 +63,10 @@
       margin-top: 0;
     }
   }
+#fname:focus, #lname:focus, #subject:focus{
+  color: black
+}
+.error{
+  color: red;
+  border-color: red;
+}

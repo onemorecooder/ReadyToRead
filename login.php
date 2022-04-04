@@ -8,13 +8,21 @@
     <script src="JS/jquery-3.6.0.min.js"></script>
     <script src="JS/jquery.validate.min.js"></script>
     <script src="JS/additional-methods.min.js"></script>
-    <script src="JS/login.js"></script>
+    <script src="JS/login.js" defer></script>
     <link rel="stylesheet" href="CSS/login.css">
-    <link rel="stylesheet" href="CSS/login_js.css">
     <title>RTR | Login</title>
 </head>
 
 <body>
+
+<div class="popup-overlay">
+  <div class="popup">
+      <img src="Imagenes/Logo/logo_large.png" style="width: 50%; height: 50%;" alt="">
+    <p>If you select "close" a cookie will be created for one minute. <br>If "submit" is selected a cookie will be set for 5 minutes.</p>
+    <a href="javascript:;" class="close">Close</a>
+    <a href="javascript:;" class="submit">Submit</a>
+  </div>
+</div>
 
     <form id="second_form" method="post" action="credentials.php">
         <div>

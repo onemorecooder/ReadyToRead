@@ -10,6 +10,7 @@
   </link>
   <link rel="stylesheet" href="CSS/inicio.css">
   <link rel="stylesheet" href="CSS/home_slider.css">
+  
 
   <script src="JS/jquery-3.6.0.min.js"></script>
   <script src="JS/slick.js"></script>
@@ -21,6 +22,7 @@
 </head>
 
 <body>
+
   <!-- INICIO CABECERA -->
   <header>
     <div id="cabezal">
