@@ -93,7 +93,7 @@ if (isset($_POST['entrada'])) {
             else if ($vectorRol == 'admin'){
                 /* EN CAMBIO SI INICIA SESIÓN CON EL USUARIO QUE TIENE EL ROL DE ADMIN
                 SE LE REDIRIGIRÁ A UNA PÁGINA QUE AÚN ESTÁ EN PROCESO */
-                header("location:https://i.ytimg.com/vi/MUK8jRQhHD8/hqdefault.jpg");
+                header("location:admin.php");
             }
             /* SI LAS CREDENCIALES SON INCORRECTAS SALTA EL POP-UP */
         } else {
