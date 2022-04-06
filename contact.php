@@ -1,6 +1,6 @@
 <?php
   if(isset($_POST["submit"])){
-    echo '<script>alert("Mensaje enviada");window.location.href="inicio.php"</script>';
+    echo '<script>alert("Message sended");window.location.href="inicio.php"</script>';
   }
 ?>
 <!DOCTYPE html>

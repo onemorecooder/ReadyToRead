@@ -44,7 +44,7 @@
             <p><input type="checkbox" required> I accept <a class="textFooter" href="#">the terms of use</a><br>
                 and our <a class="textFooter" href="#">privacy policy</a></p>
 
-            <p><input name="registro" class="button" type="submit" value="REGISTRO"></p>
+            <p><input name="registro" class="button" type="submit" value="REGISTER"></p>
             <p class="link"><a class="textFooter" href="login.php">Are you already registered?</a></p><br>
         </div>
     </form>

@@ -10,6 +10,7 @@
     <script src="JS/additional-methods.min.js"></script>
     <script src="JS/login.js" defer></script>
     <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/login_js.css">
     <title>RTR | Login</title>
 </head>
 

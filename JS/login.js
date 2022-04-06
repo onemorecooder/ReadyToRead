@@ -61,14 +61,16 @@ jQuery(document).ready(function($) {
   }
   
   $('a.close').click(function(){
+    // FADE OUT PARA QUE DESAPAREZCA CON ESTILO
     $('.popup-overlay').fadeOut();
-    //sets the coookie to one minute if the popup is closed (whole numbers = days)
+    //SI EL POPUP SE PULSA EN CERRAR EL POPUP DESAPARECERÁ DURANTE 1 MINUTO
     setCookie( 'popupCookie', 'closed', .00069444444 );
   });
   
   $('a.submit').click(function(){
+    // FADE OUT PARA QUE DESAPAREZCA CON ESTILO
     $('.popup-overlay').fadeOut();
-    //sets the coookie to five minutes if the popup is submited (whole numbers = days)
+    //SI SE PULSA EN SUBMIT DESAPARECERÁ DURANTE 5 MINUTOS
     setCookie( 'popupCookie', 'submited', .0034722222 );
   });
 

@@ -34,5 +34,9 @@ $(document).ready(function(){
                 required: "Please enter your message<br>"
             }
         },
+        submitHandler: function (form) {
+            /* SE "DESACTIVA" EL SUBMIT HASTA QUE LOS CAMPOS SEAN CORRECTOS */
+            form.submit();
+          }
     })
 })
