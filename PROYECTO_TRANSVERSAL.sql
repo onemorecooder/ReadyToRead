@@ -8,7 +8,7 @@ CREATE DATABASE PROYECTO_TRANSVERSAL;
 USE PROYECTO_TRANSVERSAL;
 
 CREATE TABLE autor(
-	id_autor INT NOT NULL PRIMARY KEY,
+	id_autor INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nombre_autor VARCHAR(20) NOT NULL,
 	apellido_1_autor VARCHAR(20) NOT NULL,
 	apellido_2_autor VARCHAR(20) NOT NULL,
@@ -120,5 +120,6 @@ CREATE TABLE soporte(
 );
 
 SELECT * FROM usuario;
+SELECT * FROM autor;
 INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
 VALUES (0, "admin", null, 'admin@admin.com', "Admin123.", null, null, null, "admin");

@@ -27,56 +27,71 @@
     </header>
     <br>
     <form id="signup_form" method="POST" action="credentials.php">
-
         <div id="myGrid">
             <div>
                 <h1>Add authors:</h1>
                 <p>Name:</p>
-                <p><input name="name" type="text" style="text-transform: capitalize;" required pattern="[A-Za-z].{2,}$"></p>
+                <p><input name="name" type="text" style="text-transform: capitalize;"  pattern="[A-Za-z].{2,}$"></p>
 
                 <p>Surname:</p>
-                <p><input name="surname" type="text" style="text-transform: capitalize;" pattern="[A-Za-z].{2,}$" required></p>
+                <p><input name="surname1" type="text" style="text-transform: capitalize;" pattern="[A-Za-z].{2,}$" ></p>
 
                 <p>Lastname:</p>
-                <p><input name="surname" type="text" style="text-transform: capitalize;" pattern="[A-Za-z].{2,}$" required></p>
+                <p><input name="surname2" type="text" style="text-transform: capitalize;" pattern="[A-Za-z].{2,}$" ></p>
 
                 <p>Date of Birth</p>
-                <p><input name="fech_nac" type="date" max="2010-01-01"></p><br>
+                <p><input name="fech_nac" type="date" max="2010-01-01"></p>
 
-                <input type="submit">
+                <p><input name="createAuthor" class="button" type="submit" value="ADD AUTHOR"></p>
             </div>
             <div>
                 <h1>Modify authors:</h1>
                 <p>Select the author you want to modify:</p>
-                <select name="authors">
-                    <option>Author 1</option>
-                    <option>Author 2</option>
-                    <option>Author 3</option>
-                </select><br>
-                <br><input type="submit">
+                    <?php
+                        $dbname = 'PROYECTO_TRANSVERSAL';
+                        try {
+                            $dsn = "mysql:host=localhost;dbname=$dbname";
+                            $password_db = '';
+                            $user_db = 'root';
+                            $dbh = new PDO($dsn, $user_db, $password_db);
+                        } catch (PDOException $e) {
+                            echo $e->getMessage();
+                        }
+
+                        $sql = $dbh->prepare("SELECT nombre_autor FROM AUTOR");
+                        $sql->setFetchMode(PDO::FETCH_ASSOC);
+                        $sql->execute();
+                        ?>
+                        <select name='autor_n'>
+                            <?php
+                        foreach ($sql as $valores){
+                            print("<option value='{$valores["nombre_autor"]}'>{$valores["nombre_autor"]}</option>");
+                        }
+                    ?>
+                    </select><br>
+                <p><input name="modify_autor" class="button" type="submit" value="CHARGE AUTHOR"></p>
                 <div>
                     <h1>Author selected:</h1>
-                    <p>Author1 selected</p>
-                    <p>Name:</p>
-                    <p><input name="name" type="text" style="text-transform: capitalize;" required pattern="[A-Za-z].{2,}$"></p>
-                    <input type="submit">
+                    <p><b><?php if (isset($_SESSION["aut"]))
+                                { echo $_SESSION["aut"];
+                                }else{
+                                    echo "<b>No author selected</b>";
+                    }; ?></b></p>
+                    <p>New name:</p>
+                    <p><input name="namemod" type="text" style="text-transform: capitalize;"  pattern="[A-Za-z].{2,}$"></p>
+
+                    <p><input name="update_autor" class="button" type="submit" value="UPDATE AUTHOR"></p>
+                    <p><input name="delete_autor" class="button" type="submit" value="DELETE AUTHOR"></p>
                 </div>
             </div>
         </div>
     </form>
-
-    <footer>
-        <ul>
-            <li><b>Ready to Read &copy; 2022</b></li>
-            <li><a class="textFooter" href="aboutUs.html" title="Pantalla sobre ReadyToRead">About Us</a></li>
-            <li><a class="textFooter" href="contact.php" title="Pantalla de contacto de ReadyToRead">Contact</a></li>
-            <li><a class="textFooter" href="soporte1.php" title="Pantalla de soporte">Support</a></li>
-        </ul>
-    </footer>
 </body>
 
 </html>
 
 <?php
+
+
 
 ?>

@@ -18,9 +18,14 @@
         </div>
         <div id="user">
             <img class="user_pic" src="icons/user.png" alt="">
-            <p id="userName"><?php session_start(); echo $_SESSION["persona"]; ?></p>
+            <p id="userName"><?php session_start();
+                                echo $_SESSION["persona"]; ?></p>
         </div>
-        <div id="logout"><form method="POST" action="credentials.php"><input name="salida" class="button" type="submit" value="LOGOUT"></form></div>
+        <div id="logout">
+            <form method="POST" action="credentials.php"><input name="salida" class="button" type="submit" value="LOGOUT">
+                <input name="eliminacion" class="button" type="submit" value="DELETE">
+            </form>
+        </div>
         <div id="barraMenu">
             <ul id="ejm4">
                 <li><a href="inicio.php" title="Home">Home</a></li>

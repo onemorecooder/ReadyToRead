@@ -86,10 +86,10 @@
           <p style="text-align: right;">E-mail: <b>Ready@ToRead.org</b></p>
           </div>
           <div class="column">
-          <a class="social_media" href=""><img src="/icons/social_media/linkedin.png" alt="linkedin" style="width: 40px; height: 40px;"></a>
-                <a class="social_media" href=""><img src="/icons/social_media/twitter.png" alt="twitter" style="width: 40px; height: 40px;"></a>
-                <a class="social_media" href=""><img src="/icons/social_media/instagram.png" alt="github" style="width: 40px; height: 40px;"></a>
-                <a class="social_media" href=""><img src="/icons/social_media/github.png" alt="github" style="width: 40px; height: 40px;"></a>
+                <a class="social_media" href=""><img src="icons/social_media/linkedin.png" alt="linkedin" style="width: 40px; height: 40px;"></a>
+                <a class="social_media" href=""><img src="icons/social_media/twitter.png" alt="twitter" style="width: 40px; height: 40px;"></a>
+                <a class="social_media" href=""><img src="icons/social_media/instagram.png" alt="github" style="width: 40px; height: 40px;"></a>
+                <a class="social_media" href=""><img src="icons/social_media/github.png" alt="github" style="width: 40px; height: 40px;"></a>
           </div>
           </div> 
   </div>

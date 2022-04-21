@@ -14,7 +14,7 @@
     <header>
         <div id="cabezal">
             <a href="/Proyecto Transversal/TERMINADO/inicio.html"><img id="logo" src="Imagenes/Logo/logo_large.png"></a>
-            <p> | Soporte</p>
+            <p> | Sopport</p>
         </div>
         <div id="user">
             <img class="user_pic" src="icons/user.png" alt="">
