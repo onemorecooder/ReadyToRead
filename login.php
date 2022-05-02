@@ -11,7 +11,7 @@
     <script src="JS/login.js" defer></script>
     <link rel="stylesheet" href="CSS/login.css">
     <link rel="stylesheet" href="CSS/login_js.css">
-    <title>RTR | Login</title>
+    <title>RIIR | Login</title>
 </head>
 
 <body>
@@ -52,12 +52,7 @@
     <script src="JS/login.js"></script>
 
     <footer>
-        <ul>
-            <li><b>Ready to Read &copy; 2022</b></li>
-            <li><a class="textFooter" href="aboutUs.html" title="Pantalla sobre ReadyToRead">About Us</a></li>
-            <li><a class="textFooter" href="contact.php" title="Pantalla de contacto de ReadyToRead">Contact</a></li>
-            <li><a class="textFooter" href="soporte1.php" title="Pantalla de soporte">Support</a></li>
-        </ul>
+        <p><b>Ready to Read &copy; 2022</b></p>
     </footer>
 
 </body>

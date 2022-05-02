@@ -22,8 +22,15 @@
                                 echo $_SESSION["persona"]; ?></p>
         </div>
         <div id="logout">
-            <form method="POST" action="credentials.php"><input name="salida" class="button" type="submit" value="LOGOUT">
+            <form method="POST" action="credentials.php">
+                <input name="salida" class="button" type="submit" value="LOGOUT">
                 <input name="eliminacion" class="button" type="submit" value="DELETE">
+            </form>
+
+                <br>
+
+            <form method="POST" action="modify.php">
+                <input name="modify" class="button" type="submit" value="MODIFY">
             </form>
         </div>
         <div id="barraMenu">

@@ -49,12 +49,7 @@
         </div>
     </form>
     <footer>
-        <ul>
-            <li><b>Ready to Read &copy; 2022</b></li>
-            <li><a class="textFooter" href="#">About Us</a></li>
-            <li><a class="textFooter" href="#">Contact</a></li>
-            <li><a class="textFooter" href="soporte1.html">Support</a></li>
-        </ul>
+        <p><b>Ready to Read &copy; 2022</b></p>
     </footer>
 
 
