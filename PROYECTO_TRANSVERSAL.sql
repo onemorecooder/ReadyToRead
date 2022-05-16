@@ -22,7 +22,7 @@ CREATE TABLE trofeo(
 );
 
 CREATE TABLE libro(
-	id_libro INT NOT NULL PRIMARY KEY,
+	id_libro INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nombre_libro VARCHAR(40) NOT NULL,
     editorial VARCHAR(20) NOT NULL,
     paginas INT NOT NULL,
@@ -121,5 +121,6 @@ CREATE TABLE soporte(
 
 SELECT * FROM usuario;
 SELECT * FROM autor;
+SELECT * FROM libro;
 INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
 VALUES (0, "admin", null, 'admin@admin.com', "Admin123.", null, null, null, "admin");

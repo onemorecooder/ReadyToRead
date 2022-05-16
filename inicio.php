@@ -7,17 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="CSS/slick.css">
-  </link>
   <link rel="stylesheet" href="CSS/inicio.css">
   <link rel="stylesheet" href="CSS/home_slider.css">
-  
-
   <script src="JS/jquery-3.6.0.min.js"></script>
   <script src="JS/slick.js"></script>
   <script src="JS/slider_home.js" defer></script>
-
-
-
   <title>RTR | Home</title>
 </head>
 

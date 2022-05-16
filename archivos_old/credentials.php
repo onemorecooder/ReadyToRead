@@ -187,6 +187,8 @@ if (isset($_POST["registro"])) {
     }
 }
 
+// ADRI
+
 if (isset($_POST['entrada'])) {
 
     $dbname = 'PROYECTO_TRANSVERSAL';
@@ -375,50 +377,7 @@ if (isset($_POST['delete_autor'])) {
     $_SESSION["aut"] = $nameToMod;
 }
 
-
-if (isset($_POST["createBook"])) {
-    $dbname = 'PROYECTO_TRANSVERSAL';
-    try {
-        $dsn = "mysql:host=localhost;dbname=$dbname";
-        $password_db = '';
-        $user_db = 'root';
-        $dbh = new PDO($dsn, $user_db, $password_db);
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
-
-    $title = $_POST["title"];
-    $editorial = $_POST["editorial"];
-    $pages = $_POST["pages"];
-    $edition = $_POST["edition"];
-    $synopsis = $_POST["synopsis"];
-    $_SESSION["aut"] = $_POST["book_autor_n"];
-    $bookAuthor = $_SESSION["aut"];
-    $id_book_author = "SELECT id_autor FROM autor WHERE nombre_autor = '$bookAuthor'";
-    $author = $dbh->query($id_book_author,PDO::FETCH_ASSOC)->fetch()["id_autor"];
-
-    $genre = $_POST["genre"];
-    $sql = $dbh->prepare("INSERT INTO libro(nombre_libro, editorial, paginas, edicion, sinopsis, id_autor, genero) 
-    VALUES ('$title', '$editorial', '$pages', '$edition', '$synopsis', '$author', '$genre')");
-
-    $sql->execute();
-    $inserted = true;
-    if ($inserted) {
-        /* SI TODOS LOS CAMPOS CUMPLEN CON LOS REQUISITOS 
-        SALTA EL POP-UP */
-        echo '<script type="text/javascript">
-    alert("¡Libro registrado con éxito!");
-    window.location.href="admin.php";
-    </script>';
-    }
-}
-
-
-
-
-
-
-
+// CLARENCE
 
 if (isset($_POST['eliminacion'])) {
     $dbname = 'PROYECTO_TRANSVERSAL';
@@ -444,9 +403,10 @@ if (isset($_POST['eliminacion'])) {
               alert("User deleted!");
               window.location.href="login.php";
               </script>';
-
     session_destroy();
 }
+
+// URI
 
 if (isset($_POST['modify'])) {
     $dbname = 'PROYECTO_TRANSVERSAL';
@@ -462,14 +422,14 @@ if (isset($_POST['modify'])) {
 
     /* GUARDAMOS TODAS LAS CREDENCIALES DEL MODIFICAR EN
         VARIABLES MEDIANTE POST */
-    $nombre = $_POST['name'];
-    $apellido = $_POST['surname'];
-    $email = $_POST['email'];
-    $passwd = $_POST['passwd'];
-    $fecha_nac = $_POST['fecha_nac'];
+        $nombre = $_POST['name'];
+        $apellido = $_POST['surname'];
+        $email = $_POST['email'];
+        $passwd = $_POST['passwd'];
+        $fecha_nac = $_POST['fecha_nac'];
 
     /* GUARDAMOS TODOS LOS PATTERNS EN VARIABLES PARA QUE EL CÓDIGO NO SEA TAN ENGORROSO */
-    /*$name_pattern = "/^[a-zA-z]*$/";
+        /*$name_pattern = "/^[a-zA-z]*$/";
         $name_lenght = strlen($nombre);
         $email_pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";
         $passwd_pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";*/
@@ -488,52 +448,53 @@ if (isset($_POST['modify'])) {
     } else if ($email == $email_conf && $passwd == $passwd_conf) {
         //SI LA CONTRASEÑA DE CONFIRMACIÓN Y LA CONTRASEÑA SON CORRECTAS (LO MISMO CON EL EMAIL) HAREMOS EL MODIFICAR PARA INTRODUCIR ESOS DATOS EN LA BASE DE DATOS DEL PROYECTO 
         */
-    //nombre de persona
-    $nombre_user = $_SESSION["persona"];
-    //mostrar filas del user
-    $query = $dbh->prepare("SELECT * FROM usuario WHERE nombre_user = '$nombre_user';");
-    $query->execute();
-    $results = $query->fetchAll(PDO::FETCH_OBJ);
-    if ($query->rowCount() > 0) {
-        // usaremos el foreach para mostrar resultados
-        foreach ($results as $result) {
-            echo "<tr>
-                <td>" . $result->nombre_user . "</td>
-                <td>" . $result->apellidos . "</td>
-                <td>" . $result->email . "</td>
-                <td>" . $result->passwd . "</td>
-                <td>" . $result->fech_nac . "</td>
+        //nombre de persona
+        $nombre_user = $_SESSION["persona"];
+        //mostrar filas del user
+        $query = $dbh -> prepare("SELECT * FROM usuario WHERE nombre_user = '$nombre_user';");
+        $query -> execute();
+        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+        if($query -> rowCount() > 0){
+            // usaremos el foreach para mostrar resultados
+            foreach($results as $result) {
+                echo "<tr>
+                <td>" . $result -> nombre_user . "</td>
+                <td>" . $result -> apellidos . "</td>
+                <td>" . $result -> email . "</td>
+                <td>" . $result -> passwd . "</td>
+                <td>" . $result -> fech_nac . "</td>
                 </tr>";
-            $id_user = $result->id_user;
-            echo $id_user;
+                $id_user = $result -> id_user;
+                echo $id_user;
+            } 
         }
-    }
-    //action modificar
-    $sql = $dbh->prepare("UPDATE usuario
+        //action modificar
+        $sql = $dbh->prepare("UPDATE usuario
                                 SET nombre_user = '$nombre',
                                     apellidos = '$apellido',
                                     email = '$email',
                                     passwd = '$passwd',
                                     fech_nac = '$fecha_nac'
                                 WHERE id_user = '$id_user';");
-    $sql->execute();
-    $_SESSION["persona"] = $nombre;
-    if ($sql->rowCount() > 0) {
-        //$count = $sql -> rowCount();
-        /*echo "<div class='content alert alert-primary' >
+        $sql->execute();
+        $_SESSION["persona"] = $nombre;
+        if($sql->rowCount() > 0) {
+            //$count = $sql -> rowCount();
+            /*echo "<div class='content alert alert-primary' >
             Gracias: $count registro ha sido actualizado </div>";*/
-        echo '<script type="text/javascript">
+            echo '<script type="text/javascript">
             alert("¡Se han guardado los cambios!");
             window.location.href="perfil.php";
             </script>';
-    } else {
-        /*echo "<div class='content alert alert-danger'> No se pudo actulizar el registro </div>";
+            
+        } else{
+            /*echo "<div class='content alert alert-danger'> No se pudo actulizar el registro </div>";
             print_r($sql->errorInfo());*/
-        echo '<script type="text/javascript">
+            echo '<script type="text/javascript">
             alert("¡No hay nuevos cambios!");
             window.location.href="perfil.php";
             </script>';
-    }
-} // Cierra envio
+        }
+}// Cierra envio
 
 ?>
