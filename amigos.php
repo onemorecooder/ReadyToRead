@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/amigos.css">
+    <link rel="icon" type="image/png" href="Imagenes/Logo/logo_small_icon_only.png" sizes="96x96">
     <title>RTR | Friends</title>
 </head>
 

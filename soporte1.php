@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/soporte1.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="Imagenes/Logo/logo_small_icon_only.png" sizes="96x96">
     <script src="JS/jquery-3.6.0.min.js"></script>
     <script src="JS/soporte.js" defer></script>
 </head>

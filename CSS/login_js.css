@@ -42,3 +42,19 @@ DE ERROR DEL EMAIL */
 #email-error.error::before{
   content: '\A Atention! ';
 }
+
+.alert{
+  text-align: center;
+  padding-top: 2,5px;
+  padding-bottom: 2,5px;
+  width: 100%;
+  display: flex;
+  font-weight: bold;
+  margin-bottom: -600px;
+}
+
+.alert label{
+  padding-top: 7px;
+  width: 100%;
+  height: 30px;
+}

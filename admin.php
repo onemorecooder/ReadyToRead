@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="CSS/admin.css">
     <link rel="stylesheet" href="CSS/login_js.css">
     <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="icon" type="image/png" href="Imagenes/Logo/logo_small_icon_only.png" sizes="96x96">
     <title>RTR | Author register</title>
 </head>
 

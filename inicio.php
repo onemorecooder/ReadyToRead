@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="CSS/slick.css">
   <link rel="stylesheet" href="CSS/inicio.css">
   <link rel="stylesheet" href="CSS/home_slider.css">
+  <link rel="icon" type="image/png" href="Imagenes/Logo/logo_small_icon_only.png" sizes="96x96">
   <script src="JS/jquery-3.6.0.min.js"></script>
   <script src="JS/slick.js"></script>
   <script src="JS/slider_home.js" defer></script>

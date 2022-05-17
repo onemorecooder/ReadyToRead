@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="CSS/contact.css">
   <link rel="stylesheet" href="CSS/home_slider.css">
   <link rel="stylesheet" href="CSS/inicio.css">
+  <link rel="icon" type="image/png" href="Imagenes/Logo/logo_small_icon_only.png" sizes="96x96">
   <title>RTR | Contact</title>
 </head>
 

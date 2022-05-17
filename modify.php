@@ -11,6 +11,7 @@
     <script src="JS/signup.js"></script>
     <link rel="stylesheet" href="CSS/modify.css">
     <link rel="stylesheet" href="CSS/login_js.css">
+    <link rel="icon" type="image/png" href="Imagenes/Logo/logo_small_icon_only.png" sizes="96x96">
     <title>RTR | MODIFY</title>
 </head>
 

@@ -224,20 +224,11 @@ if (isset($_POST['entrada'])) {
 
     /* COMPROBAMOS QUE LAS CREDENCIALES INTRODUCIDAS SEAN CORRECTAS */
     if (!empty($sql->fetch())) {
-        /* SI HA INICIADO SESIÓN COMO CLIENTE LE LLEVARÁ AL INICIO */
-        if ($rolString == 'cliente') {
-            header("location:inicio.php");
-        } else if ($rolString == 'admin') {
-            /* EN CAMBIO SI INICIA SESIÓN CON EL USUARIO QUE TIENE EL ROL DE ADMIN
-                SE LE REDIRIGIRÁ A UNA PÁGINA QUE AÚN ESTÁ EN PROCESO */
-            header("location:admin.php");
-        }
-        /* SI LAS CREDENCIALES SON INCORRECTAS SALTA EL POP-UP */
+        sleep(1);
+        echo json_encode(array('error'=> false,'texto'=> 'todoBien', 'rol' => $rol));
     } else {
-        echo '<script type="text/javascript">
-            alert("Usuario erroneo");
-            window.location.href="login.php";
-            </script>';
+        sleep(2);
+        echo json_encode(array('error'=> true,'texto'=> 'todoMal'));
     }
 
     /* CREAMOS LA VARIABLE DE SESIÓN PARA MANTENER AL USUARIO QUE HA INICIADO SESIÓN
