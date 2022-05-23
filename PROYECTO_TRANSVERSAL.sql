@@ -38,7 +38,7 @@ CREATE TABLE usuario(
     nombre_user VARCHAR(20),
     apellidos VARCHAR(20),
     email VARCHAR(30),
-    passwd VARCHAR(20),
+    passwd VARCHAR(100),
     fech_nac DATE, 
     id_trofeo INT,
     id_libro INT, 
@@ -122,5 +122,10 @@ CREATE TABLE soporte(
 SELECT * FROM usuario;
 SELECT * FROM autor;
 SELECT * FROM libro;
-INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
-VALUES (0, "admin", null, 'admin@admin.com', "Admin123.", null, null, null, "admin");
+/*INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
+VALUES (0, "admin", null, 'admin@admin.com', "Admin123.", null, null, null, "admin");*/
+
+DELETE FROM usuario WHERE id_user = 1;
+UPDATE usuario
+SET rol = "cliente"
+WHERE id_user = 2;

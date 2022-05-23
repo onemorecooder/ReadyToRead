@@ -172,6 +172,8 @@ if (isset($_POST["registro"])) {
         /* SI LA CONTRASEÑA DE CONFIRMACIÓN Y LA CONTRASEÑA SON CORRECTAS
         (LO MISMO CON EL EMAIL) HAREMOS EL INSERT PARA INTRODUCIR ESOS 
         DATOS EN LA BASE DE DATOS DEL PROYECTO */
+
+        $passwd = password_hash($passwd, PASSWORD_DEFAULT);
         $sql = $dbh->prepare("INSERT INTO USUARIO(nombre_user, apellidos, email, passwd, fech_nac) VALUES ('$nombre', '$apellidos', '$email', '$passwd', '$fech_nac DATE_FORMAT(%d-%m-%Y)')");
         $sql->setFetchMode(PDO::FETCH_ASSOC);
         $sql->execute();
@@ -202,19 +204,34 @@ if (isset($_POST['entrada'])) {
     $email = $_POST['email'];
     $passwd = $_POST['passwd'];
 
-    $sql = $dbh->prepare("SELECT * FROM usuario WHERE email = '$email' AND passwd = '$passwd'");
+    //echo $clave;
+    $errorPass = false;
+    $errorEmail = false;
+
+
+    //if (password_verify($passwd, $clave)) {
+
+    $sql = $dbh->prepare("SELECT * FROM usuario WHERE email = '$email'");
     $user = $dbh->prepare("SELECT nombre_user FROM usuario WHERE email = '$email'");
 
     $sql->setFetchMode(PDO::FETCH_ASSOC);
-
     $user->setFetchMode(PDO::FETCH_ASSOC);
+
 
     $sql->execute();
     $user->execute();
 
+
     $queryRol = "SELECT rol FROM usuario WHERE email = '$email'";
     $query = $dbh->prepare($queryRol);
     $query->execute();
+
+    $clave = ("SELECT passwd FROM usuario WHERE email = '$email'");
+    $queryClave = $dbh->prepare($clave);
+    $queryClave->execute();
+
+    $final = $queryClave->fetchColumn();
+    //echo json_encode(array('pass' => 'Aquí_pass'));
 
     $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -223,17 +240,19 @@ if (isset($_POST['entrada'])) {
     $rolString = implode(";", $rol);
 
     /* COMPROBAMOS QUE LAS CREDENCIALES INTRODUCIDAS SEAN CORRECTAS */
-    if (!empty($sql->fetch())) {
-        sleep(1);
-        echo json_encode(array('error'=> false,'texto'=> 'todoBien', 'rol' => $rol));
+    if (empty($sql->fetch())) {
+        $errorEmail = true;
+        echo json_encode(array('error' => true, 'texto' => 'ERROR_MAIL', 'errorEmail' => $errorEmail, 'rol'=>$rolString));
+    } else if (!password_verify($passwd, $final)) {
+        $errorPass = true;
+        echo json_encode(array('error' => true, 'texto' => 'ERROR_PASS', 'errorPass' => $errorPass, 'rol'=>$rolString));
     } else {
         sleep(2);
-        echo json_encode(array('error'=> true,'texto'=> 'todoMal'));
+        echo json_encode(array('error' => false, 'texto' => 'TODO_FANTÁSTICO', 'rol'=>$rolString));
     }
 
     /* CREAMOS LA VARIABLE DE SESIÓN PARA MANTENER AL USUARIO QUE HA INICIADO SESIÓN
         EN LAS DISTINTAS PÁGINAS */
-
     while ($row = $user->fetch()) {
         $_SESSION["persona"] = $row['nombre_user'];
     }
@@ -386,7 +405,7 @@ if (isset($_POST["createBook"])) {
     $_SESSION["aut"] = $_POST["book_autor_n"];
     $bookAuthor = $_SESSION["aut"];
     $id_book_author = "SELECT id_autor FROM autor WHERE nombre_autor = '$bookAuthor'";
-    $author = $dbh->query($id_book_author,PDO::FETCH_ASSOC)->fetch()["id_autor"];
+    $author = $dbh->query($id_book_author, PDO::FETCH_ASSOC)->fetch()["id_autor"];
 
     $genre = $_POST["genre"];
     $sql = $dbh->prepare("INSERT INTO libro(nombre_libro, editorial, paginas, edicion, sinopsis, id_autor, genero) 

@@ -1,29 +1,39 @@
 jQuery(document).on('submit', '#second_form', function (event) {
   event.preventDefault();
-
+  $('.alert label').slideUp('slow');
   var em = $('#em').val();
   var ps = $('#ps').val();
 
   $.ajax('credentials.php', {
     type: 'POST',  // http method
     data: { email: em, entrada: 'entrada', passwd: ps },
-    beforeSend: function(){
+    beforeSend: function () {
       $('.button').val('Validating...');
     },
     success: function (data, status, xhr) {
+      //console.log(data.errorEmail);
       data = JSON.parse(data);
-      
-      console.log(data);
-      if (data.error) {
+      console.log(data.passbbdd);
+      console.log(data.passForm);
+      if (data.errorEmail == true) {
         console.log(data.texto);
-        $('.button').val('Submit');
-        $('.alert label').css({"background-color":"#DC143C", "color":"white"});
-        $('.alert label').html('Incorrect credentials! Try again...');
-        $('.alert label').slideDown('slow');
-        setTimeout(function(){
-          $('.alert label').slideUp('slow');
-        },3000)
-
+        
+        $('.alert label').css({ "background-color": "#DC143C", "color": "white" });
+        // TIEMPO DE ESPERA PARA QUE EL "POP-UP" SUBA.
+        setTimeout(function () {
+          $('.button').val('Submit');
+          $('.alert label').html('Incorrect email! Try again...');
+          $('.alert label').slideDown('slow');
+        }, 1000)
+      } else if (data.errorPass == true) {
+        console.log(data.texto);
+        
+        $('.alert label').css({ "background-color": "#DC143C", "color": "white" });
+        setTimeout(function () {
+          $('.button').val('Submit');
+          $('.alert label').html('Incorrect password! Try again...');
+          $('.alert label').slideDown('slow');
+        }, 1000)
       } else {
         console.log(data.texto);
         if (data.rol == 'admin') {
@@ -35,7 +45,6 @@ jQuery(document).on('submit', '#second_form', function (event) {
     },
     error: function (jqXhr, textStatus, errorMessage) {
       console.log(errorMessage);
-
     }
   });
 });
