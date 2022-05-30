@@ -13,27 +13,35 @@ jQuery(document).on('submit', '#second_form', function (event) {
     success: function (data, status, xhr) {
       //console.log(data.errorEmail);
       data = JSON.parse(data);
-      //console.log(data.passbbdd);
-      //console.log(data.passForm);
-      if (data.errorEmail == true) {
-        console.log(data.texto);
-        
+      //console.log(data.passbbdd);//
+      //console.log(data.passForm);//
+      if (data.errorConn == true) {
         $('.alert label').css({ "background-color": "#DC143C", "color": "white" });
-        // TIEMPO DE ESPERA PARA QUE EL "POP-UP" SUBA.
+        //TIEMPO DE ESPERA PARA QUE EL "POP-UP" SUBA.
+        setTimeout(function () {
+          $('.button').val('Submit');
+          $('.alert label').html('Connection error...');
+          $('.alert label').slideDown('slow');
+        }, 1000);
+        console.log(data.texto);
+      } else if (data.errorEmail == true) {
+        console.log(data.texto);
+        $('.alert label').css({ "background-color": "#DC143C", "color": "white" });
+        //TIEMPO DE ESPERA PARA QUE EL "POP-UP" SUBA.
         setTimeout(function () {
           $('.button').val('Submit');
           $('.alert label').html('Incorrect email! Try again...');
           $('.alert label').slideDown('slow');
-        }, 1000)
+        }, 1000);
       } else if (data.errorPass == true) {
         console.log(data.texto);
-        
+        //TIEMPO DE ESPERA PARA QUE EL "POP-UP" SUBA.
         $('.alert label').css({ "background-color": "#DC143C", "color": "white" });
         setTimeout(function () {
           $('.button').val('Submit');
           $('.alert label').html('Incorrect password! Try again...');
           $('.alert label').slideDown('slow');
-        }, 1000)
+        }, 1000);
       } else {
         console.log(data.texto);
         if (data.rol == 'admin') {

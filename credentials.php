@@ -190,7 +190,7 @@ if (isset($_POST["registro"])) {
 }
 
 if (isset($_POST['entrada'])) {
-
+    $errorConn = false;
     $dbname = 'PROYECTO_TRANSVERSAL';
     try {
         $dsn = "mysql:host=localhost;dbname=$dbname";
@@ -198,63 +198,63 @@ if (isset($_POST['entrada'])) {
         $user_db = 'root';
         $dbh = new PDO($dsn, $user_db, $password_db);
     } catch (PDOException $e) {
-        echo $e->getMessage();
+        echo json_encode(array('error' => true, 'texto' => 'ERROR_CONN', 'errorConn' => true));
+        $errorConn = true;
     }
 
-    $email = $_POST['email'];
-    $passwd = $_POST['passwd'];
+    if (!$errorConn) {
 
-    //echo $clave;
-    $errorPass = false;
-    $errorEmail = false;
+        $email = $_POST['email'];
+        $passwd = $_POST['passwd'];
+        //echo $clave;
+        $errorPass = false;
+        $errorEmail = false;
+        //if (password_verify($passwd, $clave)) {
+        $sql = $dbh->prepare("SELECT * FROM usuario WHERE email = '$email'");
+        $user = $dbh->prepare("SELECT nombre_user FROM usuario WHERE email = '$email'");
 
-
-    //if (password_verify($passwd, $clave)) {
-
-    $sql = $dbh->prepare("SELECT * FROM usuario WHERE email = '$email'");
-    $user = $dbh->prepare("SELECT nombre_user FROM usuario WHERE email = '$email'");
-
-    $sql->setFetchMode(PDO::FETCH_ASSOC);
-    $user->setFetchMode(PDO::FETCH_ASSOC);
+        $sql->setFetchMode(PDO::FETCH_ASSOC);
+        $user->setFetchMode(PDO::FETCH_ASSOC);
 
 
-    $sql->execute();
-    $user->execute();
+        $sql->execute();
+        $user->execute();
 
 
-    $queryRol = "SELECT rol FROM usuario WHERE email = '$email'";
-    $query = $dbh->prepare($queryRol);
-    $query->execute();
+        $queryRol = "SELECT rol FROM usuario WHERE email = '$email'";
+        $query = $dbh->prepare($queryRol);
+        $query->execute();
 
-    $clave = ("SELECT passwd FROM usuario WHERE email = '$email'");
-    $queryClave = $dbh->prepare($clave);
-    $queryClave->execute();
+        $clave = ("SELECT passwd FROM usuario WHERE email = '$email'");
+        $queryClave = $dbh->prepare($clave);
+        $queryClave->execute();
 
-    $final = $queryClave->fetchColumn();
-    //echo json_encode(array('pass' => 'Aquí_pass'));
+        $final = $queryClave->fetchColumn();
+        //echo json_encode(array('pass' => 'Aquí_pass'));
 
-    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    $rol = array_column($results, 'rol');
+        $rol = array_column($results, 'rol');
+        //hola
+        $rolString = implode(";", $rol);
 
-    $rolString = implode(";", $rol);
+        /* COMPROBAMOS QUE LAS CREDENCIALES INTRODUCIDAS SEAN CORRECTAS */
+        if (empty($sql->fetch())) {
+            $errorEmail = true;
+            echo json_encode(array('error' => true, 'texto' => 'ERROR_MAIL', 'errorEmail' => $errorEmail, 'errorEmail' => $errorEmail));
+        } else if (!password_verify($passwd, $final)) {
+            $errorPass = true;
+            echo json_encode(array('error' => true, 'texto' => 'ERROR_PASS', 'errorPass' => $errorPass, 'errorEmail' => $errorEmail));
+        } else {
+            sleep(2);
+            echo json_encode(array('error' => false, 'texto' => 'TODO_FANTÁSTICO', 'rol' => $rolString));
+        }
 
-    /* COMPROBAMOS QUE LAS CREDENCIALES INTRODUCIDAS SEAN CORRECTAS */
-    if (empty($sql->fetch())) {
-        $errorEmail = true;
-        echo json_encode(array('error' => true, 'texto' => 'ERROR_MAIL', 'errorEmail' => $errorEmail));
-    } else if (!password_verify($passwd, $final)) {
-        $errorPass = true;
-        echo json_encode(array('error' => true, 'texto' => 'ERROR_PASS', 'errorPass' => $errorPass));
-    } else {
-        sleep(2);
-        echo json_encode(array('error' => false, 'texto' => 'TODO_FANTÁSTICO', 'rol'=>$rolString));
-    }
-
-    /* CREAMOS LA VARIABLE DE SESIÓN PARA MANTENER AL USUARIO QUE HA INICIADO SESIÓN
+        /* CREAMOS LA VARIABLE DE SESIÓN PARA MANTENER AL USUARIO QUE HA INICIADO SESIÓN
         EN LAS DISTINTAS PÁGINAS */
-    while ($row = $user->fetch()) {
-        $_SESSION["persona"] = $row['nombre_user'];
+        while ($row = $user->fetch()) {
+            $_SESSION["persona"] = $row['nombre_user'];
+        }
     }
 }
 
