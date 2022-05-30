@@ -13,8 +13,8 @@ jQuery(document).on('submit', '#second_form', function (event) {
     success: function (data, status, xhr) {
       //console.log(data.errorEmail);
       data = JSON.parse(data);
-      console.log(data.passbbdd);
-      console.log(data.passForm);
+      //console.log(data.passbbdd);
+      //console.log(data.passForm);
       if (data.errorEmail == true) {
         console.log(data.texto);
         

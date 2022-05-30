@@ -82,7 +82,7 @@
         </div>
 
         <div id="pageNameConButton">
-            <h1>Trophys</h1>
+            <h1>Trophies</h1>
             <a href="#" class="goTo"><img src="icons/goTo.png" alt=""></a>
         </div>
 
@@ -104,7 +104,7 @@
                 <div class="cartaTrofeo-General">
                     <div class="cartaTrofeo-Frontal">
                         <img src="icons/trofeo.png" alt="">
-                        <p>Lector diario</p>
+                        <p>Daily Reader</p>
                     </div>
                     <div class="cartaTrofeo-Trasera">
                         <h2>Daily Reader</h2>

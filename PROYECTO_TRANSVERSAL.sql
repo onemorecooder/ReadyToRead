@@ -122,10 +122,19 @@ CREATE TABLE soporte(
 SELECT * FROM usuario;
 SELECT * FROM autor;
 SELECT * FROM libro;
-/*INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
-VALUES (0, "admin", null, 'admin@admin.com', "Admin123.", null, null, null, "admin");*/
+INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
+VALUES (1, "admin", null, 'admin@admin.com', "$2y$10$4.ENmj/Yy0MzxBWGXSZE/em1u7hTrfVPrlUyvE48wviw3KQhMziV.", null, null, null, "admin");
 
-DELETE FROM usuario WHERE id_user = 1;
+INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
+VALUES (2, "Alejandro", "Torres", 'alejandro@gmail.com', "$2y$10$SBQBu0V8Ip.lh7DBYD8Jv.tdIJlEwHkOZ8P8L0nVvK2y5cytYSple", "1997-09-16", null, null, "cliente");
+INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
+VALUES (3, "Oriol", "Romagosa", 'oriol@gmail.com', "$2y$10$XEyXUP7J/bd8eYLPMHcRRO/3HAnL7HpEBXoi/X3M3Or51S3bL8ePa", "2001-02-19", null, null, "cliente");
+INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
+VALUES (4, "Clarence", "Palad", 'clarence@gmail.com', "$2y$10$1v9LAMkExTjhwP7m3fCbquKFsTlWtI/OqyELcbQcxAYEr90Em54Ta", "2003-09-25", null, null, "cliente");
+INSERT INTO usuario (id_user, nombre_user, apellidos, email, passwd, fech_nac, id_trofeo, id_libro, rol)
+VALUES (5, "Adri", "Leon", 'adri@gmail.com', "$2y$10$NlZPWgOTmba2bIhhbIdTjeOfMvruiGx4n4dm4Q/dlObJdYmsJbj82", "2003-07-24", null, null, "cliente");
+
+/*DELETE FROM usuario WHERE id_user = 1;
 UPDATE usuario
 SET rol = "cliente"
-WHERE id_user = 2;
+WHERE id_user = 2;*/

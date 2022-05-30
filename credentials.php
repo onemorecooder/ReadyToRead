@@ -242,10 +242,10 @@ if (isset($_POST['entrada'])) {
     /* COMPROBAMOS QUE LAS CREDENCIALES INTRODUCIDAS SEAN CORRECTAS */
     if (empty($sql->fetch())) {
         $errorEmail = true;
-        echo json_encode(array('error' => true, 'texto' => 'ERROR_MAIL', 'errorEmail' => $errorEmail, 'rol'=>$rolString));
+        echo json_encode(array('error' => true, 'texto' => 'ERROR_MAIL', 'errorEmail' => $errorEmail));
     } else if (!password_verify($passwd, $final)) {
         $errorPass = true;
-        echo json_encode(array('error' => true, 'texto' => 'ERROR_PASS', 'errorPass' => $errorPass, 'rol'=>$rolString));
+        echo json_encode(array('error' => true, 'texto' => 'ERROR_PASS', 'errorPass' => $errorPass));
     } else {
         sleep(2);
         echo json_encode(array('error' => false, 'texto' => 'TODO_FANTÁSTICO', 'rol'=>$rolString));
@@ -422,13 +422,6 @@ if (isset($_POST["createBook"])) {
     </script>';
     }
 }
-
-
-
-
-
-
-
 
 if (isset($_POST['eliminacion'])) {
     $dbname = 'PROYECTO_TRANSVERSAL';
